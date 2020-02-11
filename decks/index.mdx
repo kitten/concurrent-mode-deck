@@ -1,0 +1,319 @@
+import { CodeSurfer as Surfer } from "code-surfer";
+import { Appear, Background } from "gatsby-theme-mdx-deck";
+import * as L from "../src/layout";
+import customTheme from "../src/theme";
+
+export const theme = customTheme;
+
+<L.Column>
+
+# Concurrent Mode
+
+</L.Column>
+
+---
+
+<Background />
+<L.Column sx={{ minHeight: '0' }}>
+
+## Disclaimer
+
+### Information in this talk may not be accurate or may change in the future
+
+</L.Column>
+
+---
+
+<L.Row>
+
+## Time Slicing
+
+### "Chunking slow rendering on subtree into little blocks of work by interrupting the work loop."
+
+</L.Row>
+
+---
+
+import DanDemoBlocking from '../assets/dan-demo-blocking.png';
+
+<img src={DanDemoBlocking} />
+
+---
+
+import DanDemoConcurrent from '../assets/dan-demo-concurrent.png';
+
+<img src={DanDemoConcurrent} />
+
+---
+
+<Background />
+
+### "Wait a minute... I already know about this! What is this talk really about?"
+
+---
+
+<L.Column>
+
+# Concurrent Mode
+
+## A chain of unfortunate consequences
+
+</L.Column>
+
+---
+
+<Background />
+
+### How does React "delay" rendering?
+
+---
+
+<L.Column>
+
+## Sources of Slowdown
+
+- Slow component render functions
+- Slow state setter or reducer updater functions
+- Slow effect functions
+
+</L.Column>
+
+---
+
+import DeferredSetState from '../assets/deferred-setstate.svg';
+
+<L.Row>
+
+## Deferred setState.
+
+### Any state setter or dispatch can be delayed.
+
+</L.Row>
+
+<DeferredSetState />
+
+---
+
+import InterruptRendering from '../assets/interrupt-rendering.svg';
+
+<L.Row>
+
+## Interrupt Rendering.
+
+### Any rendering can be interrupted and can be completed later before committing.
+
+</L.Row>
+
+<InterruptRendering />
+
+---
+
+<L.Row>
+
+## Oops #1
+
+### Delaying rendering is only safe when no effects are pending on a subtree.
+
+</L.Row>
+
+---
+
+import HooksAPI from '../assets/hooks-api.svg';
+
+<L.Row>
+
+## The Hooks API.
+
+### This restriction is reflected in the hooks API with encapsulation of effects.
+
+</L.Row>
+
+<HooksAPI />
+
+---
+
+import HooksAPITiming from '../assets/hooks-api-timing.svg';
+
+<L.Row>
+
+## Hooks Timings.
+
+### With each hook we observe a part of the lifecycle and can react.
+
+</L.Row>
+
+<HooksAPITiming />
+
+---
+
+import ComponentLifecycle from '../assets/component-lifecycle.svg';
+
+<L.Row>
+
+## The Lifecycle.
+
+### The lifecycle we observe has three phases repeating.
+
+</L.Row>
+
+<ComponentLifecycle />
+
+---
+
+import ObservingLifecycleEvents from '../assets/observing-lifecycle-events.svg';
+
+<L.Row>
+
+## Observing the Lifecycle.
+
+### Overlapping the lifecycle with hooks, we see a phase that we can't observe...
+
+</L.Row>
+
+<ObservingLifecycleEvents />
+
+---
+
+import InterruptedLifecycle from '../assets/interrupted-lifecycle.svg';
+
+<L.Row>
+
+## Interrupting the Lifecycle.
+
+### Unfortunately this phase becomes very relevant in Strict and Concurrent Mode.
+
+</L.Row>
+
+<InterruptedLifecycle />
+
+---
+
+<L.Row>
+
+## Oops #2
+
+### It's not possible to have a subscription or effect track the component lifecycle.
+
+</L.Row>
+
+---
+
+<L.Row>
+
+## Workaround
+
+### Resort to useSubscription
+
+</L.Row>
+
+---
+
+import SchedulerPriorities from '../assets/scheduler-priorities.svg';
+
+<L.Row>
+
+## Scheduler Priorities.
+
+### In Concurrent Mode the time budgets are switched on for time slicing.
+
+</L.Row>
+
+<SchedulerPriorities />
+
+---
+
+<L.Row>
+
+## Oops #3
+
+### Seems like React isn't all that predictable anymore.
+
+</L.Row>
+
+---
+
+<L.Row>
+
+## Workaround
+
+### Synchronous Subscriber and scheduled teardown
+
+</L.Row>
+
+https://github.com/facebook/react/issues/15317#issuecomment-573337558
+
+---
+
+<Background />
+
+### "We didn't yet get to what happens when an effect is slow, right?"
+
+---
+
+<L.Row>
+
+## Tearing
+
+### "When a subtree's renderered state falls behind while another subtree has committed updates already."
+
+</L.Row>
+
+---
+
+import Tearing1 from '../assets/bvaughn-tearing-1.png';
+import Tearing2 from '../assets/bvaughn-tearing-2.png';
+
+<L.Row>
+<img src={Tearing2} />
+<img src={Tearing1} />
+</L.Row>
+
+---
+
+<L.Column>
+
+## React's solution?
+
+- When an effect slows down, React can't safely interrupt or delay updates.
+- Instead it batches all updates and switches back to blocking mode
+- This is called a _deopt_.
+
+</L.Column>
+
+---
+
+<L.Row>
+
+## Oops #4
+
+### React Concurrent's deopt can be slower than Blocking was before.
+
+</L.Row>
+
+---
+
+<L.Column>
+
+## However
+
+- This may still cause _tearing_ when another update is scheduled during this blocking batch.
+
+</L.Column>
+
+---
+
+<L.Row>
+
+## Oops #5
+
+### A new `useMutableSource` hook is necessary to fix this tearing-during-deopt issue.
+
+</L.Row>
+
+---
+
+<L.Column>
+
+# Concurrent Mode: Oops
+
+</L.Column>

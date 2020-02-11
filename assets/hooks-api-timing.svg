@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="498px" height="275px" viewBox="0 0 498 275" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63 (92445) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="494" height="271" rx="4"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="Slide-9" transform="translate(-172.000000, -160.000000)">
+            <g id="Group" transform="translate(174.000000, 162.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Rectangle" stroke="#FAE0D0" stroke-width="3" xlink:href="#path-1"></use>
+                <rect id="Rectangle" fill-opacity="0.3" fill="#FAE0D0" mask="url(#mask-2)" x="0" y="0" width="494" height="36"></rect>
+                <text id="render" opacity="0.9" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Bold, Neue Haas Unica W1G" font-size="18" font-weight="bold" letter-spacing="0.22" fill="#000000">
+                    <tspan x="19" y="21">render</tspan>
+                </text>
+                <text id="API" opacity="0.9" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Medium, Neue Haas Unica W1G" font-size="16" font-weight="400" letter-spacing="0.495556" fill="#000000">
+                    <tspan x="19" y="54">API</tspan>
+                </text>
+                <text id="Call-Timing" opacity="0.9" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Medium, Neue Haas Unica W1G" font-size="16" font-weight="400" letter-spacing="0.495556" fill="#000000">
+                    <tspan x="200" y="54">Call Timing</tspan>
+                </text>
+                <text id="Update-Timing" opacity="0.9" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Medium, Neue Haas Unica W1G" font-size="16" font-weight="400" letter-spacing="0.495556" fill="#000000">
+                    <tspan x="350" y="54">Update Timing</tspan>
+                </text>
+                <text id="(your-component)" opacity="0.9" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="18" font-weight="normal" letter-spacing="0.32" fill="#000000">
+                    <tspan x="95" y="21">(your component)</tspan>
+                </text>
+                <g id="Group-2" mask="url(#mask-2)" font-family="iAWriterQuattroS-Bold, iA Writer Quattro S" font-size="15" font-weight="bold" letter-spacing="0.236842">
+                    <g transform="translate(19.000000, 76.000000)">
+                        <text id="useMemo()">
+                            <tspan x="0" y="15" fill="#F0647D">useMemo()</tspan>
+                        </text>
+                        <text id="useRef()">
+                            <tspan x="0" y="41" fill="#F0647D">useRef()</tspan>
+                        </text>
+                        <text id="useEffect()">
+                            <tspan x="0" y="119" fill="#F0647D">useEffect()</tspan>
+                        </text>
+                        <text id="useLayoutEffect()">
+                            <tspan x="0" y="145" fill="#F0647D">useLayoutEffect()</tspan>
+                        </text>
+                        <text id="useState()">
+                            <tspan x="0" y="67" fill="#F0647D">useState()</tspan>
+                        </text>
+                        <text id="useReducer()">
+                            <tspan x="0" y="93" fill="#F0647D">useReducer()</tspan>
+                        </text>
+                    </g>
+                </g>
+                <text id="immediate" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="200" y="93">immediate</tspan>
+                </text>
+                <text id="immediate" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="200" y="119">immediate</tspan>
+                </text>
+                <text id="immediate" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="200" y="145">immediate</tspan>
+                </text>
+                <text id="deferred" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="350" y="145">deferred</tspan>
+                </text>
+                <text id="deferred" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="350" y="171">deferred</tspan>
+                </text>
+                <text id="deferred" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="350" y="197">deferred</tspan>
+                </text>
+                <text id="post-commit" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="350" y="223">post-commit</tspan>
+                </text>
+                <text id="immediate" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="200" y="171">immediate</tspan>
+                </text>
+                <text id="n/a" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="200" y="197">n/a</tspan>
+                </text>
+                <text id="n/a" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="200" y="223">n/a</tspan>
+                </text>
+                <text id="n/a" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="350" y="93">n/a</tspan>
+                </text>
+                <text id="n/a" mask="url(#mask-2)" font-family="NeueHaasUnicaW1G-Regular, Neue Haas Unica W1G" font-size="15" font-weight="normal" letter-spacing="0.236842" fill="#F09A64">
+                    <tspan x="350" y="119">n/a</tspan>
+                </text>
+                <text id="return" mask="url(#mask-2)" font-family="iAWriterQuattroS-Regular, iA Writer Quattro S" font-size="15" font-weight="normal" fill="#F09A64">
+                    <tspan x="19" y="257">return</tspan>
+                </text>
+                <rect id="Rectangle" stroke="#FAE0D0" stroke-width="3" mask="url(#mask-2)" x="0" y="36" width="494" height="202"></rect>
+                <rect id="Rectangle" stroke="#FAE0D0" stroke-width="3" mask="url(#mask-2)" x="342" y="69" width="152" height="169"></rect>
+                <rect id="Rectangle" stroke="#FAE0D0" stroke-width="3" mask="url(#mask-2)" x="191" y="69" width="151" height="169"></rect>
+                <rect id="Rectangle" stroke="#FAE0D0" stroke-width="3" mask="url(#mask-2)" transform="translate(95.500000, 153.500000) scale(-1, 1) translate(-95.500000, -153.500000) " x="0" y="69" width="191" height="169"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
