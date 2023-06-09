@@ -13,7 +13,7 @@
     "@mdx-js/react": "1.5.2",
     "@philpl/gatsby-theme-mdx-deck": "3.2.0",
     "code-surfer": "3.0.0",
-    "gatsby": "2.18.15",
+    "gatsby": "4.25.7",
     "gatsby-plugin-netlify": "^2.1.30",
     "gatsby-plugin-mdx": "1.0.63",
     "prism-react-renderer": "^1.0.2",
